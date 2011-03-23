@@ -1,0 +1,4 @@
+# English strings go here for Rails i18n
+en:
+  updates_notifier_label_callback_settings: Updates Notifier callback settings
+  updates_notifier_label_callback_url: The URL which gets called by the plugin to notify of an update
