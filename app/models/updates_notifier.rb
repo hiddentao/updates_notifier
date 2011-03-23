@@ -6,7 +6,7 @@ class UpdatesNotifier < ActiveRecord::Base
     post_to_server({
         "type" => "issue",
         "user" => userLogin,
-        "issueId" => issueId
+        "issue" => issueId
     })
   end
 private
