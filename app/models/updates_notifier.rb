@@ -15,6 +15,7 @@ class UpdatesNotifier < ActiveRecord::Base
         "type" => "issue",
         "user" => userLogin,
         "issue" => issueId,
+        "comment" => journal.notes,
         "changes" => changes.to_json,
     })
   end
