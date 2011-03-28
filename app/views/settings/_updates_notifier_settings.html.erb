@@ -4,5 +4,7 @@
 <p>
   <label><%= l(:updates_notifier_label_callback_url) %></label><%= text_field_tag 'settings[callback_url]', @settings['callback_url'], :size => 70 %>
 </p>
-
+<p>
+  <label><%= l(:updates_notifier_label_ignore_api_changes) %></label><%= check_box_tag 'settings[ignore_api_changes]', 1, @settings['ignore_api_changes'] %>
+</p>
 </fieldset>

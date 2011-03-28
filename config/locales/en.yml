@@ -2,3 +2,4 @@
 en:
   updates_notifier_label_callback_settings: Updates Notifier callback settings
   updates_notifier_label_callback_url: The URL which gets called by the plugin to notify of an update
+  updates_notifier_label_ignore_api_changes: Ignore updates made through the API
