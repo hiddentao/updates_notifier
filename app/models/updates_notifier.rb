@@ -26,7 +26,9 @@ private
   def self.post_to_server(data)
     client = HTTPClient.new
     client.debug_dev = STDOUT if $DEBUG
+    RAILS_DEFAULT_LOGGER.debug("UPDATES_NOTIFIER: Posting update back to " + self.callback_url + ": " + data.to_json)
     resp = client.post(self.callback_url, data)
+    RAILS_DEFAULT_LOGGER.debug("UPDATES_NOTIFIER: Response code from " + self.callback_url + ": " + resp.status_code.to_s)
     return resp
   end
 end
