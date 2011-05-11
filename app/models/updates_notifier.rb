@@ -3,7 +3,7 @@ require 'httpclient'
 require 'json'
 
 class UpdatesNotifier < ActiveRecord::Base
-  def self.send_issue_update(userEmailAddress, issueId, journal)
+  def self.send_issue_update(user, issueId, journal)
     changes = []
     journal.details.each do |j|
       changes.push({
@@ -11,9 +11,10 @@ class UpdatesNotifier < ActiveRecord::Base
         "value" => j.value
       })
     end
+    u = {"email" => user.mail, "firstname" => user.firstname, "lastname" => user.lastname}
     post_to_server({
         "type" => "issue",
-        "user" => userEmailAddress,
+        "user" => u.to_json,
         "issue" => issueId,
         "comment" => journal.notes,
         "changes" => changes.to_json,
